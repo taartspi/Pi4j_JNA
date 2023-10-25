@@ -18,7 +18,7 @@ public class WS281xTest {
         var console = new Console();
         Context pi4j = Pi4J.newAutoContext();
 
-        console.title("<-- The Pi4J V2 Project Extension  -->", "NeoPixel94V");
+        console.title("<-- The Pi4J V2 Project Extension  -->", "Use JNA and the NeoPixel94V");
 
 
         int pixels = 1;
