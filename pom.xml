@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jna.version>5.6.0</jna.version>
         <!-- JAVA COMPILER VERSIONS -->
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
@@ -170,8 +170,8 @@
                                 <taskdef resource="net/sf/antcontrib/antcontrib.properties"
                                          classpathref="lib.path"/>
                                 <echo message=" ${line.separator}Prepare to copy .so to target/lib ${line.separator}"/>
-                                <mkdir dir="${project.build.directory}/lib/aarch64/"/>
-                                <mkdir dir="${project.build.directory}/lib/armhf/"/>
+                                <mkdir dir="${project.build.directory}/lib/aarch64/pi4j-ws281xled/"/>
+                                <mkdir dir="${project.build.directory}/lib/armhf/pi4j-ws281xled/"/>
 
 
                                 <echo message=" ${pi.arch}   : test this value ${line.separator}"/>
@@ -180,14 +180,14 @@
                                 <then>
                                 <echo message=" tested as armhf {line.separator}"/>
                                     <!-- OS is armhf -->
-                                    <copy todir="${project.build.directory}/lib/armhf/">
+                                    <copy todir="${project.build.directory}/lib/armhf/pi4j-ws281xled/">
                                         <fileset dir="${basedir}/src/main/native" includes="*.so"/>
                                     </copy>
                                 </then>
                                 <else>
                                     <echo message=" tested as aarch64 ${line.separator}"/>
                                     <!-- OS is aarch64 -->
-                                    <copy todir="${project.build.directory}/lib/aarch64/">
+                                    <copy todir="${project.build.directory}/lib/aarch64/pi4j-ws281xled/">
                                         <fileset dir="${basedir}/src/main/native" includes="*.so"/>
                                     </copy>
                                 </else>
@@ -222,11 +222,11 @@
                                     <files>
                                         <!-- include 32-bit (ARMHF) Pi4J ws281xled JNI Library  -->
                                         <file>
-                                            ${project.build.directory}/lib/armhf/libpi4j-ws281xled.so
+                                            ${project.build.directory}/lib/armhf/pi4j-ws281xled/libpi4j-ws281xled.so
                                         </file>
                                         <!-- include 64-bit (AARCH64) Pi4J ws281xled JNI Library  -->
                                         <file>
-                                            ${project.build.directory}/lib/aarch64/libpi4j-ws281xled.so
+                                            ${project.build.directory}/lib/aarch64/pi4j-ws281xled/libpi4j-ws281xled.so
                                         </file>
                                     </files>
                                 </requireFilesExist>
@@ -329,7 +329,7 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <mkdir dir="${project.build.directory}/lib/aarch64/"/>
+                                        <mkdir dir="${project.build.directory}/lib/aarch64/pi4j-ws281xled/"/>
                                         <echo message=" ${line.separator}JNA Profile  ${line.separator}"/>
                                         <echo message="Profile aarch64 ${line.separator}"/>
                                         <echo message="pi.arch ${pi.arch}"/>
@@ -380,7 +380,7 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <mkdir dir="${project.build.directory}/lib/armhf/"/>
+                                        <mkdir dir="${project.build.directory}/lib/armhf/pi4j-ws281xled/"/>
                                         <echo message=" ${line.separator}JNA Profile  ${line.separator}"/>
                                         <echo message="Profile armhf ${line.separator}"/>
                                    </target>

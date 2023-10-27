@@ -67,7 +67,7 @@ public class WS281xImpl  implements WS281xIntrf {
                 throw new IllegalStateException("Pi4J has detected and UNKNOWN/UNSUPPORTED 'os.arch' : [" +
                     osArch + "]; only 'arm|armhf' and 'arm64|aarch64' are supported.");
         }
-        String possibleJnaPath = workingDirectory+"/Pi4j_JNA/target/lib/" +osArch +"/pi4j-ws281xled/";
+        String possibleJnaPath = workingDirectory+"/target/lib/" +osArch + "/pi4j-ws281xled/";
         // Also, handle the user relying upon "pi4j.library.path" to locate so's
         String pi4jLibpath = System.getProperty("pi4j.library.path");
 
