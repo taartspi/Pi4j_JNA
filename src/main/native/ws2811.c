@@ -42,6 +42,7 @@
 #include <linux/spi/spidev.h>
 #include <time.h>
 #include <math.h>
+
 #include "mailbox.h"
 #include "clk.h"
 #include "gpio.h"
@@ -90,6 +91,7 @@ typedef struct videocore_mbox {
     unsigned size;          /* Size of allocation */
     uint8_t *virt_addr;     /* From mapmem() */
 } videocore_mbox_t;
+
 
 typedef struct ws2811_device
 {

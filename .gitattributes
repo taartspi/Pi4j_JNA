@@ -1,0 +1,4 @@
+#The files will be stored as binary, no attempt to create a delta from the previous version.
+
+*.pdf binary
+*.so binary
